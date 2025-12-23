@@ -5,7 +5,7 @@ import argparse
 from loguru import logger as log
 from utils import uac
 from version import __appVer__
-import installer
+import funcs.installer as installer
 from config import config
 
 
@@ -79,7 +79,7 @@ def main():
 
     has_version_args = args.version or args.path or args.pre or args.latest
     is_double_click = len(sys.argv) == 1
-    
+
     if not has_version_args and not is_double_click and not args.dry_run:
         args.latest = True
 

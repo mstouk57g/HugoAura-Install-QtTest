@@ -7,8 +7,8 @@ import threading
 from typing import Callable, Optional, Dict, Any
 import argparse
 
-from installer import run_installation
-from uninstaller import run_uninstallation, get_uninstall_info, check_hugoaura_installation
+from funcs.installer import run_installation
+from funcs.uninstaller import run_uninstallation, get_uninstall_info, check_hugoaura_installation
 
 
 class InstallerModel:
@@ -156,7 +156,7 @@ class InstallerModel:
                         error_detail = str(error_info)
                     else:
                         error_detail = "安装过程中发生未知错误"
-                    
+
                     # 根据错误类型提供更详细的错误信息
                     if "资源文件解压失败" in error_detail:
                         error_message = f"安装失败: {error_detail}\n\n可能原因: \n- 下载的文件损坏\n- 磁盘空间不足\n- 临时目录权限问题"
@@ -168,7 +168,7 @@ class InstallerModel:
                         error_message = f"安装失败: {error_detail}\n\n可能原因: \n- 希沃管家正在运行\n- 文件系统过滤驱动未正确卸载"
                     else:
                         error_message = f"安装过程中发生错误: \n{error_detail}"
-                    
+
                     self.completed_callback(False, error_message)
 
         except Exception as e:
@@ -212,7 +212,7 @@ class InstallerModel:
                 if self.completed_callback:
                     error_info = result.get("errorInfo", "未知错误")
                     error_str = str(error_info) if hasattr(error_info, '__str__') else "未知错误"
-                    
+
                     # 根据错误类型提供更详细的错误信息和解决方案
                     if "OLD_ASAR_ENOENT" in error_str:
                         error_message = "卸载失败: 找不到原始ASAR备份文件\n\n无法将希沃管家恢复到原始状态。\n\n建议解决方案: \n1. 从希沃官网(e.seewo.com)重新下载希沃管家完整安装包\n2. 卸载当前希沃管家后重新安装"
@@ -224,7 +224,7 @@ class InstallerModel:
                         error_message = f"部分卸载失败: {error_str}\n\n主要卸载流程已完成, 但清理工作未完全成功。\n建议手动删除残留文件。"
                     else:
                         error_message = f"卸载过程中发生错误: \n{error_str}"
-                    
+
                     self.completed_callback(False, error_message)
 
         except Exception as e:
@@ -269,11 +269,11 @@ class InstallerModel:
 
         version = self.install_options["version"]
         version_type = self.install_options.get("version_type", "")
-        
+
         # 内置版本标签列表
         built_in_versions = [
             "v0.1.1-beta",
-            "v0.1.0-beta", 
+            "v0.1.0-beta",
             "v0.1.1-pre-IV-patch-3",
             "v0.1.1-pre-IV",
             "v0.1.1-pre-III",
@@ -281,7 +281,7 @@ class InstallerModel:
             "v0.1.1-pre-I",
             "vAutoBuild"
         ]
-        
+
         # 根据版本类型和具体版本进行处理
         if version_type == "custom_path" or version == "custom_path":
             args.path = self.install_options["custom_path"]
