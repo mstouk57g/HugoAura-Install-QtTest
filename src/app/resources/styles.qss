@@ -1,0 +1,15 @@
+/* style.qss */
+QWidget {
+    background-color: transparent;
+}
+
+QPushButton#closeButton {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font: bold 20px;
+}
+
+QPushButton#closeButton:hover {
+    color: red;
+}
