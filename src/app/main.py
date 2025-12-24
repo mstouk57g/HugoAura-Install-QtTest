@@ -6,9 +6,22 @@ from window import ImageWindow
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    # 样式表
-    with open("resources/styles.qss", "r") as f:
-        app.setStyleSheet(f.read())
+    app.setStyleSheet("""
+                            QWidget {
+                            background-color: transparent;
+                            }
+
+                            QPushButton#closeButton {
+                                background-color: transparent;
+                                color: white;
+                                border: none;
+                                font: bold 20px;
+                            }
+
+                            QPushButton#closeButton:hover {
+                                color: red;
+                            }
+                            """)
 
     window = ImageWindow(background_path="resources/background.png", title_image_path="resources/title.png", install_image_path="resources/install.jpg", icon_path="resources/aura_black.png")
 
