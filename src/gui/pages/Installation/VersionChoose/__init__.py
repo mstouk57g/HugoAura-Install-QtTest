@@ -3,7 +3,7 @@ from .TagSources import TagSources
 from .VersionsView import VersionsView
 from .VersionSelector import VersionSelector
 from gui.pages.Loading import LoadingPage
-from gui.utils.signals import global_signals
+from utils.signals import global_signals
 
 class VersionChoose(QWidget):
     def __init__(self, parent=None):

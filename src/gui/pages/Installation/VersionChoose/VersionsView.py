@@ -4,7 +4,7 @@ from PyQt5.QtGui import QFont, QColor
 from gui.widgets.ItemListWithLogo import ItemListWithLogo
 from gui.widgets.ScrollColumn import ScrollColumn
 from gui.widgets.hex_button import HexButton
-from gui.utils.signals import global_signals
+from utils.signals import global_signals
 
 class VersionsView(QWidget):
     def __init__(self):

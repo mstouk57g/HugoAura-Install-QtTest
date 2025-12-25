@@ -242,5 +242,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #main()
-    gui_main() # 单独调试GUI界面时使用
+    main()
+    #gui_main() # 单独调试GUI界面时使用

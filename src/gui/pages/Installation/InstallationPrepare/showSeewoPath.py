@@ -1,12 +1,12 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFileDialog, QSizePolicy
 from PyQt5.QtCore import Qt
-from gui.utils.signals import global_signals
+from utils.signals import global_signals
 from PyQt5.QtGui import QPixmap, QFont, QColor
 
 from gui.widgets.TransparentLineEdit import TransparentLineEdit
 from gui.widgets.hex_button import ImageTextButton, HexButton
 from gui.widgets.BottomSection import CustomSection
-from gui.utils.globe import openHelpLink
+from utils.globe import openHelpLink
 
 class showSeewoPath(QWidget):
     def __init__(self, ifFind=False, findPath=None, seewoVersion=None):

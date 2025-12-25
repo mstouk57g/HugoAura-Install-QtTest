@@ -4,7 +4,7 @@ from gui.pages.Installation.VersionChoose import VersionChoose
 from gui.pages.Installation.ResourceDownload import ResourceDownload
 from gui.pages.Installation.Install import Install
 from gui.pages.Installation.Finish import Finish
-from gui.utils.signals import global_signals
+from utils.signals import global_signals
 
 from gui.widgets.navbar import NavBar
 

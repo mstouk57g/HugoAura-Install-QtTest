@@ -4,7 +4,7 @@ from PyQt5.QtGui import QFont, QColor
 from gui.widgets.TransparentLineEdit import TransparentLineEdit
 from gui.widgets.hex_button import ImageTextButton, HexButton
 from gui.widgets.BottomSection import CustomSection
-from gui.utils.signals import global_signals
+from utils.signals import global_signals
 
 class TagSources(QWidget):
     def __init__(self):

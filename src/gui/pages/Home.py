@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QSizePoli
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt
 from gui.widgets.hex_button import HexButton
-from gui.utils.signals import global_signals
+from utils.signals import global_signals
 
 class Home(QWidget): # 点击开始安装按钮的信号
 
