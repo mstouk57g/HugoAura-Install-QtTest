@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QScrollAr
 from PyQt5.QtCore import Qt, pyqtSignal, QTimer
 from PyQt5.QtGui import QPainter, QColor, QPaintEvent, QFontMetrics, QFont
 from typing import Optional
+from utils.globe import get_resource_file
 
 from gui.widgets.hex_button import ImageTextButton
 from gui.widgets.ScrollColumn import ScrollColumn
@@ -479,8 +480,8 @@ class SelectableListWidget(QWidget):
 
         # 创建自定义滚动列
         self.scroll_column = ScrollColumn(
-            up_image="resources/next_white.png",
-            down_image="resources/next_white.png",
+            up_image=get_resource_file("next_white.png"),
+            down_image=get_resource_file("next_white.png"),
             scrollbar_bg="rgba(255,255,255,20)",
             scrollbar_handle="rgba(255,255,255,255)"
         )

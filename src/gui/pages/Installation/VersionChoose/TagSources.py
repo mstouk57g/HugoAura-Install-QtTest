@@ -5,6 +5,7 @@ from gui.widgets.TransparentLineEdit import TransparentLineEdit
 from gui.widgets.hex_button import ImageTextButton, HexButton
 from gui.widgets.BottomSection import CustomSection
 from utils.signals import global_signals
+from utils.globe import get_resource_file
 
 class TagSources(QWidget):
     def __init__(self):
@@ -113,7 +114,7 @@ class ButtonGroupWidget(QWidget):
         layout = QVBoxLayout()
         layout.setAlignment(Qt.AlignBottom | Qt.AlignHCenter)
 
-        self.get_version_btn = HexButton("   下一步   ", font_size=10, style=1, icon_path="resources/Next.png")
+        self.get_version_btn = HexButton("   下一步   ", font_size=10, style=1, icon_path=get_resource_file("Next.png"))
         self.get_version_btn.setFont(QFont("Microsoft Yahei", 12))
         self.get_version_btn.clicked = lambda: global_signals.showVersionViewPage.emit()
 

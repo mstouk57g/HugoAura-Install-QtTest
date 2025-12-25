@@ -13,7 +13,6 @@ from version import __appVer__
 import funcs.installer as installer
 from config import config
 
-
 def parse_arguments():
     """
     解析命令行参数
@@ -115,8 +114,11 @@ def cli_main():
 def gui_main():
     from PyQt5.QtWidgets import QApplication
     from gui.window import ImageWindow
-    app = QApplication(sys.argv)
+    from utils.globe import get_resource_file
 
+    print(get_resource_file("background.png"))
+
+    app = QApplication(sys.argv)
     app.setStyleSheet("""
                                     QWidget {
                                     background-color: transparent;
@@ -134,7 +136,7 @@ def gui_main():
                                     }
                                     """)
 
-    window = ImageWindow(background_path="resources/background.png", title_image_path="resources/title.png", install_image_path="resources/install.jpg", icon_path="resources/aura_black.png")
+    window = ImageWindow(background_path=get_resource_file("background.png"), title_image_path=get_resource_file("title.png"), install_image_path=get_resource_file("install.jpg"), icon_path=get_resource_file("aura_black.png"))
 
     window.Installation_page.setCurrentIndex(0)
 

@@ -3,6 +3,7 @@ from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt
 from gui.widgets.hex_button import HexButton
 from utils.signals import global_signals
+from utils.globe import get_resource_file
 
 class Home(QWidget): # 点击开始安装按钮的信号
 
@@ -35,7 +36,7 @@ class Home(QWidget): # 点击开始安装按钮的信号
 
         # logo
         logo_label = QLabel()
-        logo_pixmap = QPixmap("resources/aura.png")
+        logo_pixmap = QPixmap(get_resource_file("aura.png"))
         logo_label.setAlignment(Qt.AlignCenter)
         logo_label.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         v_layout.addWidget(logo_label, 4)
@@ -58,7 +59,7 @@ class Home(QWidget): # 点击开始安装按钮的信号
 
     # ---------- title 图片 ----------
         title_label = QLabel()
-        title_pixmap = QPixmap("resources/title.png")
+        title_pixmap = QPixmap(get_resource_file("title.png"))
         title_label.setAlignment(Qt.AlignCenter)
         title_label.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         v_layout.addWidget(title_label)
@@ -80,7 +81,7 @@ class Home(QWidget): # 点击开始安装按钮的信号
         v_layout.addWidget(desc_label, 1)
 
         # 开始安装按钮
-        button = HexButton(text="开始安装", font_size=12, icon_path="resources/Next.png", style=1, h_padding=25)
+        button = HexButton(text="开始安装", font_size=12, icon_path=get_resource_file("Next.png"), style=1, h_padding=25)
         button.setMaximumHeight(60)
         button.setFont(QFont("Microsoft YaHei", 16))
         button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)

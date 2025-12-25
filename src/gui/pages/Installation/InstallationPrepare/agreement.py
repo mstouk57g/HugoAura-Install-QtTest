@@ -4,6 +4,7 @@ from gui.widgets.hex_button import HexButton, ImageTextButton
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 from utils.signals import global_signals
+from utils.globe import get_resource_file
 
 class agreementPage(QWidget):
     def __init__(self, parent=None):
@@ -14,7 +15,7 @@ class agreementPage(QWidget):
 
         top_button_layout = QHBoxLayout()
         top_button_layout.setAlignment(Qt.AlignHCenter)
-        self.top_button = ImageTextButton("用户协议", icon_path="resources/agreement.png", font_size=12, v_padding=8, canclick=False)
+        self.top_button = ImageTextButton("用户协议", icon_path=get_resource_file("agreement.png"), font_size=12, v_padding=8, canclick=False)
         self.top_button.setFont(QFont("Microsoft YaHei", 12))
         top_button_layout.addWidget(self.top_button)
         main_layout.addLayout(top_button_layout)
@@ -31,10 +32,10 @@ class agreementPage(QWidget):
 
         # 从外部文件读取内容
         try:
-            with open("resources/agreement.txt", "r", encoding="utf-8") as f:
+            with open(get_resource_file("agreement.txt"), "r", encoding="utf-8") as f:
                 content = f.read()
         except FileNotFoundError:
-            content = "未找到协议文件：resources/agreement.txt"
+            content = "未找到协议文件：agreement.txt"
 
         self.textbox.set_text(content)
         self.textbox.set_line_spacing(25, mode="fixed")  # 行间距 25px
@@ -47,9 +48,9 @@ class agreementPage(QWidget):
         button_layout.setSpacing(40)  # 按钮之间间距
 
         # 左边 style2，右边 style1
-        self.btn_disagree = HexButton("    不同意    ", icon_path="resources/CHA.png", font_size=10, style=2)
+        self.btn_disagree = HexButton("    不同意    ", icon_path=get_resource_file("CHA.png"), font_size=10, style=2)
         self.btn_disagree.setFont(QFont("Microsoft YaHei", 10))
-        self.btn_agree = HexButton(" 同意并继续 ", icon_path="resources/GOU.png", font_size=10, style=1)
+        self.btn_agree = HexButton(" 同意并继续 ", icon_path=get_resource_file("GOU.png"), font_size=10, style=1)
         self.btn_agree.setFont(QFont("Microsoft YaHei", 10))
 
         self.btn_disagree.clicked = self.on_disagree_clicked

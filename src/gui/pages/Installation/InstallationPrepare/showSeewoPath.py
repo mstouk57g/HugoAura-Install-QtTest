@@ -6,7 +6,7 @@ from PyQt5.QtGui import QPixmap, QFont, QColor
 from gui.widgets.TransparentLineEdit import TransparentLineEdit
 from gui.widgets.hex_button import ImageTextButton, HexButton
 from gui.widgets.BottomSection import CustomSection
-from utils.globe import openHelpLink
+from utils.globe import openHelpLink, get_resource_file
 
 class showSeewoPath(QWidget):
     def __init__(self, ifFind=False, findPath=None, seewoVersion=None):
@@ -14,13 +14,13 @@ class showSeewoPath(QWidget):
         if ifFind and findPath:
             self.showText = "希沃管家安装目录匹配成功"
             self.findPath = findPath
-            self.showPic = "resources/FileOk.png"
+            self.showPic = get_resource_file("FileOk.png")
             self.seewoVersion = "希沃管家版本：" + str(seewoVersion)
             self.nextAvilable = True
         else:
             self.showText = "未找到希沃管家安装目录"
             self.findPath = None
-            self.showPic = "resources/FileNo.png"
+            self.showPic = get_resource_file("FileNo.png")
             self.seewoVersion = None
             self.nextAvilable = False
         self.initUI()
@@ -78,7 +78,7 @@ class showSeewoPath(QWidget):
         self.text_edit.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
 
         # 手动选择按钮
-        self.pathChoose = ImageTextButton("手动选择", icon_path="resources/FileCh.png",
+        self.pathChoose = ImageTextButton("手动选择", icon_path=get_resource_file("FileCh.png"),
                                          font_size=10, v_padding=8, canclick=True, h_padding=8)
         self.pathChoose.setFont(QFont("Microsoft YaHei", 10))
         self.pathChoose.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
@@ -109,7 +109,7 @@ class showSeewoPath(QWidget):
         button_layout.setSpacing(10)  # 设置按钮间距
 
         # 下一步按钮
-        self.btn_next = HexButton("   下一步   ", icon_path="resources/next.png",
+        self.btn_next = HexButton("   下一步   ", icon_path=get_resource_file("next.png"),
                                   font_size=10, style=1)
         self.btn_next.setFont(QFont("Microsoft YaHei", 10))
         self.btn_next.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
@@ -117,7 +117,7 @@ class showSeewoPath(QWidget):
         self.btn_next.clicked = self.nextStep
 
         # 添加动作按钮
-        self.InstallPathHelp = ImageTextButton("获取帮助", icon_path="resources/help.png",
+        self.InstallPathHelp = ImageTextButton("获取帮助", icon_path=get_resource_file("help.png"),
                                                     font_size=10, v_padding=8, canclick=True, h_padding=8, style=5)
         self.InstallPathHelp.setFont(QFont("Microsoft YaHei", 10))
         self.InstallPathHelp.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)

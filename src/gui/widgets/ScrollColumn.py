@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QScrollBar
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap, QPainter, QTransform
+from utils.globe import get_resource_file
 
 class ImageButton(QWidget):
     """带旋转功能的图片按钮"""
@@ -45,7 +46,7 @@ class ScrollColumn(QWidget):
 
     """
     def __init__(self, parent=None, scroll_width=40, btn_size=30, scrollbar_width=5,
-                 up_image="resources/next.png", down_image="resources/next.png",
+                 up_image=get_resource_file("next.png"), down_image=get_resource_file("next.png"),
                  scrollbar_bg="rgba(50,159,255,80)", scrollbar_handle="rgba(50,159,255,255)"):
         super().__init__(parent)
         self.scroll_width = scroll_width        # 滑动区域宽度

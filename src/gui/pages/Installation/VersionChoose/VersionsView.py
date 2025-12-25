@@ -5,6 +5,7 @@ from gui.widgets.ItemListWithLogo import ItemListWithLogo
 from gui.widgets.ScrollColumn import ScrollColumn
 from gui.widgets.hex_button import HexButton
 from utils.signals import global_signals
+from utils.globe import get_resource_file
 
 class VersionsView(QWidget):
     def __init__(self):
@@ -56,7 +57,7 @@ class VersionsView(QWidget):
         content_layout.setSpacing(10)  # 列表项间距
 
         HugoAura_Main_Version_ItemListWithLogo = ItemListWithLogo()
-        HugoAura_Main_Version_ItemListWithLogo.set_icon("resources/aura.png")
+        HugoAura_Main_Version_ItemListWithLogo.set_icon(get_resource_file("aura.png"))
         HugoAura_Main_Version_ItemListWithLogo.set_title("HugoAura-Main")
         HugoAura_Main_Version_ItemListWithLogo.title_label.setStyleSheet("color: #FFFFFF; font-family: Microsoft YaHei;")
         HugoAura_Main_Version_ItemListWithLogo.set_horizontal_expand(True)
@@ -82,7 +83,7 @@ class VersionsView(QWidget):
         content_layout.addWidget(HugoAura_Main_Version_ItemListWithLogo)
 
         HugoAura_Aikari_Version_ItemListWithLogo = ItemListWithLogo()
-        HugoAura_Aikari_Version_ItemListWithLogo.set_icon("resources/Aikari.png")
+        HugoAura_Aikari_Version_ItemListWithLogo.set_icon(get_resource_file("Aikari.png"))
         HugoAura_Aikari_Version_ItemListWithLogo.set_title("HugoAura-Aikari")
         HugoAura_Aikari_Version_ItemListWithLogo.title_label.setStyleSheet("color: #FFFFFF; font-family: Microsoft YaHei;")
         HugoAura_Aikari_Version_ItemListWithLogo.set_horizontal_expand(True)
@@ -112,8 +113,8 @@ class VersionsView(QWidget):
         scroll_area.setWidget(scroll_content)
 
         self.scroll_column = ScrollColumn(
-            up_image="resources/next_white.png",
-            down_image="resources/next_white.png",
+            up_image=get_resource_file("next_white.png"),
+            down_image=get_resource_file("next_white.png"),
             scrollbar_bg="rgba(255,255,255,20)",
             scrollbar_handle="rgba(255,255,255,255)"
         )
@@ -137,9 +138,9 @@ class VersionsView(QWidget):
         button_layout.setAlignment(Qt.AlignHCenter)
         button_layout.setSpacing(40)  # 按钮之间间距
 
-        self.back_btn = HexButton("    返回    ", icon_path="resources/CHA.png", font_size=10, style=2)
+        self.back_btn = HexButton("    返回    ", icon_path=get_resource_file("CHA.png"), font_size=10, style=2)
         self.back_btn.setFont(QFont("Microsoft YaHei", 10))
-        self.next_btn = HexButton("   下一步   ", font_size=10, style=1, icon_path="resources/Next.png")
+        self.next_btn = HexButton("   下一步   ", font_size=10, style=1, icon_path=get_resource_file("Next.png"))
         self.next_btn.setFont(QFont("Microsoft Yahei", 12))
         self.back_btn.clicked = lambda: global_signals.showTagSourcePage.emit()
 
