@@ -1,11 +1,11 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QSizePolicy, QLabel
 from PyQt5.QtGui import QPixmap, QPainter, QIcon
 from PyQt5.QtCore import Qt, QPoint, QRect
-from pages.Home import Home
-from pages.Installation import Installation
-from utils.globe import global_vars
-from utils.signals import global_signals
-from pages.QuitPage import QuitPage
+from gui.pages.Home import Home
+from gui.pages.Installation import Installation
+from gui.utils.globe import global_vars
+from gui.utils.signals import global_signals
+from gui.pages.QuitPage import QuitPage
 
 class ImageWindow(QWidget):
     def __init__(self, background_path, title_image_path=None, install_image_path=None, icon_path=None, parent=None):

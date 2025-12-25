@@ -1,12 +1,10 @@
 import sys
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QWidget,
-                             QLabel, QHBoxLayout)
+from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QLabel, QHBoxLayout
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
 
-# 从指定模块引入所需的组件
-from widgets.CustomTextBox import CustomTextBox
-from widgets.hex_button import HexButton
+from gui.widgets.CustomTextBox import CustomTextBox
+from gui.widgets.hex_button import HexButton
 
 
 class QuitPage(QWidget):

@@ -1,10 +1,10 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTextEdit, QScrollArea
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QColor
-from widgets.ItemListWithLogo import ItemListWithLogo
-from widgets.ScrollColumn import ScrollColumn
-from widgets.hex_button import HexButton
-from utils.signals import global_signals
+from gui.widgets.ItemListWithLogo import ItemListWithLogo
+from gui.widgets.ScrollColumn import ScrollColumn
+from gui.widgets.hex_button import HexButton
+from gui.utils.signals import global_signals
 
 class VersionsView(QWidget):
     def __init__(self):

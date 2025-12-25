@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QStackedWidget
 from .agreement import agreementPage
 from .showSeewoPath import showSeewoPath
-from pages.Loading import LoadingPage
-from utils.signals import global_signals
+from gui.pages.Loading import LoadingPage
+from gui.utils.signals import global_signals
 
 class InstallationPrepare(QWidget):
     def __init__(self, parent=None):

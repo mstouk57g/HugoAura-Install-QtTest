@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QObject
 from PyQt5.QtCore import QUrl
 from PyQt5.QtGui import QDesktopServices
-from utils.signals import global_signals
+from gui.utils.signals import global_signals
 
 def openHelpLink():
     QDesktopServices.openUrl(QUrl("https://forum.aurax.cc/"))

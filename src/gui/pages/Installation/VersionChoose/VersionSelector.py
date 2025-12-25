@@ -1,6 +1,5 @@
-import sys
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
-from widgets.ItemList import SelectableListWidget
+from gui.widgets.ItemList import SelectableListWidget
 
 class VersionSelector(QWidget):
     def __init__(self, mode):

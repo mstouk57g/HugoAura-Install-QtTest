@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout
-from widgets.CustomTextBox import CustomTextBox
-from widgets.hex_button import HexButton, ImageTextButton
+from gui.widgets.CustomTextBox import CustomTextBox
+from gui.widgets.hex_button import HexButton, ImageTextButton
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
-from utils.signals import global_signals
+from gui.utils.signals import global_signals
 
 class agreementPage(QWidget):
     def __init__(self, parent=None):

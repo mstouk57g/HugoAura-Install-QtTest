@@ -3,8 +3,8 @@ from PyQt5.QtCore import Qt, pyqtSignal, QTimer
 from PyQt5.QtGui import QPainter, QColor, QPaintEvent, QFontMetrics, QFont
 from typing import Optional
 
-from widgets.hex_button import ImageTextButton
-from widgets.ScrollColumn import ScrollColumn
+from gui.widgets.hex_button import ImageTextButton
+from gui.widgets.ScrollColumn import ScrollColumn
 
 class LCornerBorderWidget(QWidget):
     """

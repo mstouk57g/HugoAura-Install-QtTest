@@ -229,6 +229,7 @@ def main():
     except ImportError as e:
         error_msg = f"模块导入失败: {e}\n\n请确保所有依赖都已正确安装:\n- ttkbootstrap\n- pillow\n- loguru\n- requests"
         show_error_dialog(error_msg)
+        print(e)
         sys.exit(1)
     except Exception as e:
         error_msg = f"启动GUI应用失败: {e}"

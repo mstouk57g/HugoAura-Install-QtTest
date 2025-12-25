@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QTextEdit, QHBoxLayout, QVBoxLayout
 from PyQt5.QtGui import QTextCursor, QTextBlockFormat, QFont, QPainter, QPolygonF, QColor, QLinearGradient
 from PyQt5.QtCore import Qt, QPointF, QRectF, pyqtSignal
-from widgets.ScrollColumn import ScrollColumn
+from gui.widgets.ScrollColumn import ScrollColumn
 
 class CustomTextBox(QWidget):
     """

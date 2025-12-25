@@ -1,12 +1,12 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QStackedWidget
-from pages.Installation.InstallationPrepare import InstallationPrepare
-from pages.Installation.VersionChoose import VersionChoose
-from pages.Installation.ResourceDownload import ResourceDownload
-from pages.Installation.Install import Install
-from pages.Installation.Finish import Finish
-from utils.signals import global_signals
+from gui.pages.Installation.InstallationPrepare import InstallationPrepare
+from gui.pages.Installation.VersionChoose import VersionChoose
+from gui.pages.Installation.ResourceDownload import ResourceDownload
+from gui.pages.Installation.Install import Install
+from gui.pages.Installation.Finish import Finish
+from gui.utils.signals import global_signals
 
-from widgets.navbar import NavBar
+from gui.widgets.navbar import NavBar
 
 class Installation(QWidget):
     def __init__(self, parent=None):

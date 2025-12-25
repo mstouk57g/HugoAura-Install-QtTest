@@ -1,11 +1,10 @@
-import sys
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget, QLabel, QSizePolicy, QFrame, QSpacerItem
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QColor
-from widgets.TransparentLineEdit import TransparentLineEdit
-from widgets.hex_button import ImageTextButton, HexButton
-from widgets.BottomSection import CustomSection
-from utils.signals import global_signals
+from gui.widgets.TransparentLineEdit import TransparentLineEdit
+from gui.widgets.hex_button import ImageTextButton, HexButton
+from gui.widgets.BottomSection import CustomSection
+from gui.utils.signals import global_signals
 
 class TagSources(QWidget):
     def __init__(self):
