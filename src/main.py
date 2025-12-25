@@ -112,6 +112,38 @@ def cli_main():
 
             sys.exit(0 if success else 1)
 
+def gui_main():
+    from PyQt5.QtWidgets import QApplication
+    from gui.window import ImageWindow
+    app = QApplication(sys.argv)
+
+    app.setStyleSheet("""
+                                    QWidget {
+                                    background-color: transparent;
+                                    }
+
+                                    QPushButton#closeButton {
+                                        background-color: transparent;
+                                        color: white;
+                                        border: none;
+                                        font: bold 20px;
+                                    }
+
+                                    QPushButton#closeButton:hover {
+                                        color: red;
+                                    }
+                                    """)
+
+    window = ImageWindow(background_path="resources/background.png", title_image_path="resources/title.png", install_image_path="resources/install.jpg", icon_path="resources/aura_black.png")
+
+    window.Installation_page.setCurrentIndex(0)
+
+    current_size = window.size()
+    window.setFixedSize(current_size)
+    window.show()
+    sys.exit(app.exec_())
+
+
 # 添加项目根目录到 Python 路径
 project_root = Path(__file__).parent
 sys.path.insert(0, str(project_root))
@@ -195,36 +227,7 @@ def main():
             app = cli_main()
         else:
             # 创建并启动主控制器
-
-            from PyQt5.QtWidgets import QApplication
-            from gui.window import ImageWindow
-            app = QApplication(sys.argv)
-
-            app.setStyleSheet("""
-                                    QWidget {
-                                    background-color: transparent;
-                                    }
-
-                                    QPushButton#closeButton {
-                                        background-color: transparent;
-                                        color: white;
-                                        border: none;
-                                        font: bold 20px;
-                                    }
-
-                                    QPushButton#closeButton:hover {
-                                        color: red;
-                                    }
-                                    """)
-
-            window = ImageWindow(background_path="resources/background.png", title_image_path="resources/title.png", install_image_path="resources/install.jpg", icon_path="resources/aura_black.png")
-
-            window.Installation_page.setCurrentIndex(0)
-
-            current_size = window.size()
-            window.setFixedSize(current_size)
-            window.show()
-            sys.exit(app.exec_())
+            app = gui_main()
 
     except ImportError as e:
         error_msg = f"模块导入失败: {e}\n\n请确保所有依赖都已正确安装:\n- ttkbootstrap\n- pillow\n- loguru\n- requests"
@@ -239,4 +242,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    #main()
+    gui_main() # 单独调试GUI界面时使用

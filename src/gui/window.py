@@ -53,9 +53,9 @@ class ImageWindow(QWidget):
         self.title_bar.setLayout(self.title_layout)
 
         # 添加标题图片和安装图片到标题栏左边
+        self.title_margin = 20
         if (self.title_pixmap and not self.title_pixmap.isNull()) or (self.install_pixmap and not self.install_pixmap.isNull()):
             # 创建容器widget来添加间距
-            self.title_margin = 20
             self.image_container = QWidget()
             self.image_container_layout = QHBoxLayout()
             self.image_container_layout.setContentsMargins(0, self.title_margin, 0, self.title_margin)
