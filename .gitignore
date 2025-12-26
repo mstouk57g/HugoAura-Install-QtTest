@@ -8,3 +8,11 @@ docs_temp/
 
 # Editor files
 .vscode/
+
+# Nuitka
+main.dist/
+main.onefile-build/
+*.exe
+
+# pyinstaller
+*.spec
