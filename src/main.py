@@ -191,20 +191,11 @@ def run_as_admin():
 
 def show_error_dialog(message):
     """显示错误对话框"""
-    try:
-        import tkinter as tk
-        from tkinter import messagebox
 
-        root = tk.Tk()
-        root.withdraw()  # 隐藏主窗口
-        messagebox.showerror("AuraInstaller 错误", message)
-        root.destroy()
+    try:
+        ctypes.windll.user32.MessageBoxW(0, message, "AuraInstaller 错误", 0x10)
     except:
-        # 如果连tkinter都不可用, 就用系统消息框
-        try:
-            ctypes.windll.user32.MessageBoxW(0, message, "AuraInstaller 错误", 0x10)
-        except:
-            print(f"错误: {message}")
+        print(f"错误: {message}")
 
 
 def main():
